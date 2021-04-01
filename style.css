@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+/**************************************************************************/
+/**************               CUSTOM PROPERTIES              **************/
+/**************************************************************************/
+
+*,*::before,*::after{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root{
+	--ff-primary: 'Roboto', sans-serif;
+
+	--clr-light:#FFF;
+	--clr-dark:#111;
+	--clr-accent:#1A1D1A;
+	--clr-red:#E94F37;
+	--clr-bg:#F8F7F9;
+
+	--fs-h1:3rem;
+	--fs-reg:1.5rem;
+	--fs-body:1rem;
+}
+
+/**************************************************************************/
+/**************                    GENERAL                   **************/
+/**************************************************************************/
+
+body{
+	background: var(--clr-light);
+	color: var(--clr-dark);
+	font-family: var(--ff-primary);
+	font-size: var(--fs-body);
+	line-height:1.6;
+	min-height: 100vh;
+}
+.logo{
+	display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo img{height:50px;}
+.logo p{font-weight: 900;}
+.section_title-todoList{
+	font-size: var(--fs-h1);
+	text-align: center;
+    text-transform: uppercase;
+}
+form{
+	min-height: 10vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+form input, form button{
+	padding: 0.5rem;
+	font-size: var(--fs-reg);
+	border: 1px solid var(--clr-dark);
+	background: var(--clr-light);
+}
+.addBtn{color: var(--clr-accent);}
+.addBtn:hover{
+	background: var(--clr-accent);
+	color: var(--clr-light);
+	opacity: .7;
+}
+.todoList_Container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.todoList_ul{
+	min-width: 30%;
+	list-style: none;
+}
+.todo{
+	margin: 0.5rem;
+	background: var(--clr-bg);
+	color: var(--clr-dark);
+	font-size: var(--fs-reg);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	transition: all .25s ease;
+	overflow-wrap: anywhere;
+}
+.newTodo{
+	padding: 0rem 0.5rem;
+}
+.todo li{
+	flex:1;
+	text-transform: capitalize;
+}
+.deleteBtn{
+	border:none;
+	padding: 1rem;
+	cursor: pointer;
+	font-size: var(--fs-body);
+	background: var(--clr-red);
+}
+.deleteTransition{
+	transform: translateY(8rem);
+	opacity: 0;
+}
+.deleteBtn:hover{opacity: .7;}
+.fa-trash{pointer-events: none;}
+
+/**************************************************************************/
+/**************                 MEDIA QUERIES                **************/
+/**************************************************************************/
+
+@media(max-width: 375px){
+	:root{--fs-h1:2rem;}
+	form input, form button{font-size: var(--fs-body);}
+	.todo{font-size: var(--fs-body);}
+	.deleteBtn{	font-size: .7rem;}
+}
